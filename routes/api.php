@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\FishController;
+use App\Http\Controllers\RecipeController;
+use App\Models\Recipe;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,7 +17,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('fishes', FishController::class);
+Route::resources([
+    'fishes' => FishController::class,
+    'recipes' => RecipeController::class,
+]);
+// Route::resource('fishes', FishController::class);
+// Route::resource('recipes', RecipeController::class);
+Route::get('/recipes/fishbyid/{id}', [RecipeController::class, 'getAllById']);
 Route::get('/fishes/search/{name}', [FishController::class, 'search']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
