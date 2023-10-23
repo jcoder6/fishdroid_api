@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\FishController;
 use App\Http\Controllers\RecipeController;
+use App\Http\Controllers\TermController;
 use App\Models\Recipe;
+use App\Models\Term;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 Route::resources([
     'fishes' => FishController::class,
     'recipes' => RecipeController::class,
+    'terms' => TermController::class,
 ]);
 // Route::resource('fishes', FishController::class);
 // Route::resource('recipes', RecipeController::class);
