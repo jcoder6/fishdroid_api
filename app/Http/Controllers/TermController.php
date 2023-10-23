@@ -21,6 +21,6 @@ class TermController extends Controller
      */
     public function show(string $id)
     {
-        return Term::find($id);
+        return Term::where('id', $id)->get();
     }
 }
