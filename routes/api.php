@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FishController;
+use App\Http\Controllers\NutritionController;
 use App\Http\Controllers\RecipeController;
 use App\Http\Controllers\TermController;
 use App\Models\Recipe;
@@ -23,6 +24,7 @@ Route::resources([
     'fishes' => FishController::class,
     'recipes' => RecipeController::class,
     'terms' => TermController::class,
+    'nutritions' => NutritionController::class
 ]);
 // Route::resource('fishes', FishController::class);
 // Route::resource('recipes', RecipeController::class);
