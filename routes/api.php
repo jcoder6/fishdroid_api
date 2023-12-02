@@ -32,6 +32,7 @@ Route::resources([
 // Route::resource('recipes', RecipeController::class);
 Route::get('/recipes/fishbyid/{id}', [RecipeController::class, 'getAllById']);
 Route::get('/fishes/search/{name}', [FishController::class, 'search']);
+Route::get('/terms/search/{term}', [TermController::class, 'search']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
