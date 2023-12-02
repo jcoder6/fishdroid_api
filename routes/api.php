@@ -4,6 +4,7 @@ use App\Http\Controllers\FishController;
 use App\Http\Controllers\NutritionController;
 use App\Http\Controllers\RecipeController;
 use App\Http\Controllers\TermController;
+use App\Http\Controllers\TriviaController;
 use App\Models\Recipe;
 use App\Models\Term;
 use Illuminate\Http\Request;
@@ -24,7 +25,8 @@ Route::resources([
     'fishes' => FishController::class,
     'recipes' => RecipeController::class,
     'terms' => TermController::class,
-    'nutritions' => NutritionController::class
+    'nutritions' => NutritionController::class,
+    'trivia' => TriviaController::class
 ]);
 // Route::resource('fishes', FishController::class);
 // Route::resource('recipes', RecipeController::class);
