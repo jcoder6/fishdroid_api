@@ -14,7 +14,7 @@ class FishController extends Controller
     {
         return Fish::join('familynames', 'fish.family_name_id', '=', 'familynames.id')
                     ->select('fish.*', 'familynames.family_name as family_name')
-                    ->orderBy('fish.id', 'desc')
+                    ->inRandomOrder()
                     ->take(15)
                     ->get();
     }
