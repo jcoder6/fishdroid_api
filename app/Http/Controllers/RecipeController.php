@@ -15,7 +15,7 @@ class RecipeController extends Controller
         return Recipe::join('fish', 'fish.id', '=', 'recipes.fish_id')
                     ->select('recipes.id', 'fish.fish_name', 'recipe_name', 'recipe_img')
                     ->orderBy('recipes.id', 'desc')
-                    ->take(20)
+                    ->take(15)
                     ->get();
     }
 
@@ -37,6 +37,10 @@ class RecipeController extends Controller
                     ->get();
     }
 
-
-    
+    public function getAllRecipe(String $p) {
+        return Recipe::join('fish', 'fish.id', '=', 'recipes.fish_id')
+        ->select('recipes.id', 'fish.fish_name', 'recipe_name', 'recipe_img')
+        ->orderBy('recipe_name', 'asc')
+        ->get();
+    }
 }

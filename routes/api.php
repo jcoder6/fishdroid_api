@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\FishController;
+use App\Http\Controllers\GameController;
 use App\Http\Controllers\HatcheryController;
 use App\Http\Controllers\HatchVideoController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\NutritionController;
 use App\Http\Controllers\RecipeController;
 use App\Http\Controllers\TermController;
@@ -27,11 +29,14 @@ Route::resources([
     'terms' => TermController::class,
     'nutritions' => NutritionController::class,
     'trivia' => TriviaController::class,
-    'hatchery' => HatcheryController::class
+    'hatchery' => HatcheryController::class,
+    'game' => GameController::class,
+    'message' => MessageController::class
 ]);
 // Route::resource('fishes', FishController::class);
 // Route::resource('recipes', RecipeController::class);
 Route::get('/recipes/fishbyid/{id}', [RecipeController::class, 'getAllById']);
+Route::get('/recipes/getRandomRecipe/{p}', [RecipeController::class, 'getAllRecipe']);
 Route::get('/fishes/search/{name}', [FishController::class, 'search']);
 Route::get('/fishes/random/', [FishController::class, 'random']);
 Route::get('/fishes/pagination/{page}', [FishController::class, 'pagination']);
